@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import Card from "./components/GithubCard";
 import axios from "axios";
 
 import "./App.css";
@@ -23,7 +25,7 @@ class App extends Component {
       })
 
       .catch(error => {
-        console.log(error.message);
+        console.log(error.error);
       });
   };
 
@@ -34,7 +36,16 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>My Information</h1> <h1>Followers</h1>{" "}
+        <h1>My Information</h1>
+        <Card
+          name={this.state.userData.name}
+          login={this.state.userData.login}
+          location={this.state.userData.location}
+          company={this.state.userData.company}
+          bio={this.state.userData.bio}
+          img={this.state.userData.avatar_url}
+        />
+        <h1>Followers</h1>{" "}
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Card from "./components/GithubCard";
+import FollowerList from "./components/FollowerList";
 import axios from "axios";
 
 import "./App.css";
@@ -45,7 +46,10 @@ class App extends Component {
           bio={this.state.userData.bio}
           img={this.state.userData.avatar_url}
         />
-        <h1>Followers</h1>{" "}
+        <h1>Followers</h1>
+        <div>
+          <FollowerList />
+        </div>
       </div>
     );
   }

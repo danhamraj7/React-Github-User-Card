@@ -1,10 +1,34 @@
 import React, { Component } from "react";
 
 import Card from "./components/GithubCard";
-import FollowerList from "./components/FollowerList";
+
+import Nav from "./components/Nav";
+
 import axios from "axios";
 
+import FollowerList from "./components/FollowerList";
+
 import "./App.css";
+
+import styled from "styled-components";
+
+const Body = styled.div`
+  display: flex;
+
+  flex-direction: column;
+
+  width: 95%;
+
+  background-color: #6b5b95;
+
+  justify-content: center;
+
+  align-content: center;
+
+  padding: 2em;
+
+  align-items: center;
+`;
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +50,7 @@ class App extends Component {
       })
 
       .catch(error => {
-        console.log(error.error);
+        console.log(error.message);
       });
   };
 
@@ -36,8 +60,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <Body>
+        <Nav />
+
         <h1>My Information</h1>
+
         <Card
           name={this.state.userData.name}
           login={this.state.userData.login}
@@ -46,11 +73,13 @@ class App extends Component {
           bio={this.state.userData.bio}
           img={this.state.userData.avatar_url}
         />
+
         <h1>Followers</h1>
+
         <div>
           <FollowerList />
         </div>
-      </div>
+      </Body>
     );
   }
 }

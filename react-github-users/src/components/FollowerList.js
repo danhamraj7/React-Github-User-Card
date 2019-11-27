@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-
 import Follower from "./Follower";
-
 import axios from "axios";
 
 class FollowerList extends Component {

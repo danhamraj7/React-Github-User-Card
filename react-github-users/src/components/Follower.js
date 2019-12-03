@@ -37,9 +37,9 @@ class Follower extends Component {
 
     return (
       <StyledCard>
-        <div>
+        <ImageDiv>
           <Image src={img} alt="pic" />
-        </div>
+        </ImageDiv>
 
         <StyledInfoDiv>
           <h4>Login: {login}</h4>

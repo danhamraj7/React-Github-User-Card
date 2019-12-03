@@ -23,10 +23,6 @@ const TopNavContent = styled.div`
     height: 22px;
   }
 
-  .search-logo {
-    margin-top: 5px;
-  }
-
   a {
     text-decoration: none;
     color: rgb(255, 255, 255);
